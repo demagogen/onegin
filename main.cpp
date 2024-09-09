@@ -4,8 +4,8 @@
 
 int main(int argc, const char *argv[]) {
     const int lines = 20;
-    const int line_digits = 40;
-    char *text[lines] = {};
+    char text[lines][line_digits] = {};
+    int lines_numbers[lines] = {};
 
     FILE *fp = NULL;
 
@@ -16,17 +16,10 @@ int main(int argc, const char *argv[]) {
         printf("error\nfile name was not entered\n");
     }
 
-    fill_text(fp, text, lines, line_digits);
+    fill_text(fp, text, lines_numbers, lines);
+    line_compare(text, lines_numbers, lines);
+    print_text(text, lines_numbers, lines);
 
-    for (int i = 0; i < lines; i++) {
-        for (int j = 0; j < lines; j++) {
-            printf("%c", text[i][j]);
-        }
-    }
-
-    for (size_t line_index = 0; line_index < lines; line_index++) {
-        printf("%s", text[line_index]);
-    }
 
     return 0;
 }
