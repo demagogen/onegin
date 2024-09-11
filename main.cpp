@@ -26,6 +26,7 @@ int main(int argc, const char *argv[]) {
 
     symbols_in_text(fp, file_size, &TextData);
     print_text(file_size, &TextData);
+    free_text_data(&TextData);
 
     //fill_text(fp, text, lines_numbers, lines);
     ////line_compare(text, lines_numbers, lines);

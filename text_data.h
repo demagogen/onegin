@@ -8,6 +8,7 @@ struct TEXT_DATA {
     char *text = NULL;
 };
 
+int free_text_data(TEXT_DATA *TextData);
 int count_lines(TEXT_DATA *TextData, int file_size);
 int symbols_in_text(FILE *fp, int file_size, TEXT_DATA *TextData);
 int print_text(int file_size, TEXT_DATA *TextData);

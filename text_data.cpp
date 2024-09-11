@@ -6,6 +6,20 @@
 
 #include "text_data.h"
 
+int free_text_data(TEXT_DATA *TextData) {
+    assert(TextData);
+
+    if (!TextData) {
+        printf("error\nnull pointer on TextData struct in free_TEXT_DATA\n");
+        return -1;
+    }
+
+    free(TextData->lines_pointers);
+    free(TextData->text);
+
+    return 0;
+}
+
 int count_lines(TEXT_DATA *TextData, int file_size) {
     if (!TextData) {
         printf("error\nnull pointer on struct TextData in count_lines\n");
